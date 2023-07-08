@@ -388,3 +388,14 @@ footer {
 }
 /* button ends*/
 /* End Single Product Page */
+
+/* Start Privacy Policy Page */
+
+#PrivacyP > P,
+#PrivacyP > ul {
+  margin-bottom: 10px;
+  line-height: 30px;
+  margin: 0 5% 0 5%;
+  text-align: justify;
+}
+/* End Privacy Policy Page */
