@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Coffee Beans</title>
+    <!-- google icons -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
     <a name="asma ahmed alashwali"></a>
     <link rel="icon" href="./Images/logo.png" />
     <link rel="stylesheet" href="CSS/styles.css" />
@@ -11,15 +16,19 @@
   <body class="home-page">
     <!-- navbar -->
     <header>
-      <iframe
-        id="iframe_nav"
-        src="navbar.html"
-        frameborder="0"
-        scrolling="no"
-      ></iframe>
+      <!-- my header template html -->
+      <nav class="navParent" id="navbar">
+        <a href="index.html"> <img id="logo" src="./Images/logo.png" /></a>
+        <a href="index.html" class="navItem">Home</a>
+        <a href="shop.html" class="navItem">Shop</a>
+        <a href="#" class="navItem">Wholesale</a>
+        <a href="#" class="navItem">About Us</a>
+        <a href="contactUs.html" class="navItem">Contact Us</a>
+        <a href="#" class="navItem">Account</a>
+        <span class="material-symbols-outlined"> search </span>
+      </nav>
     </header>
-    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-    <section > 
+    <section class="section">
       <p>
         Lorem ipsum dolor sit amet consectetur, adipisicing elit.<br />
         Perferendis ullam similique illo est, esse sunt excepturi voluptas
@@ -43,57 +52,56 @@
         eligendi illum omnis! <br />
       </p>
       <br />
-      
+
       <br /><br />
       <br /><br />
       <br /><br />
 
       <h2 class="gallery-h2">Our Types of Coffee Roasts</h2>
-      <br>
+      <br />
       <div class="responsive">
         <div class="gallery">
           <a target="_blank" href="#">
-            <img src="Images/coffee-roast-light.png" alt="Cinque Terre" >
+            <img src="Images/coffee-roast-light.png" alt="Cinque Terre" />
           </a>
-          <div class="desc" style="color: #E1834B;">Light</div>
-        </div>
-      </div>  
-      <div class="responsive">
-        <div class="gallery">
-          <a target="_blank" href="#">
-            <img src="Images/coffee-beans-medium.png" alt="Forest" >
-          </a>
-          <div class="desc" style="color:#AA5A2E;">Medium</div>
+          <div class="desc" style="color: #e1834b">Light</div>
         </div>
       </div>
       <div class="responsive">
         <div class="gallery">
           <a target="_blank" href="#">
-            <img src="Images/coffee-beans-dark.png" alt="Northern Lights">
+            <img src="Images/coffee-beans-medium.png" alt="Forest" />
           </a>
-          <div class="desc" style="color:#6E3517;">Dark</div>
+          <div class="desc" style="color: #aa5a2e">Medium</div>
         </div>
       </div>
-      
       <div class="responsive">
         <div class="gallery">
           <a target="_blank" href="#">
-            <img src="Images/coffee-beans-extradark.png" alt="Mountains" >
+            <img src="Images/coffee-beans-dark.png" alt="Northern Lights" />
           </a>
-          <div class="desc" style="color:#4C2510;">Extra Dark</div>
+          <div class="desc" style="color: #6e3517">Dark</div>
         </div>
       </div>
-      
+
+      <div class="responsive">
+        <div class="gallery">
+          <a target="_blank" href="#">
+            <img src="Images/coffee-beans-extradark.png" alt="Mountains" />
+          </a>
+          <div class="desc" style="color: #4c2510">Extra Dark</div>
+        </div>
+      </div>
+
       <div class="clearfix"></div>
     </section>
-       <!-- footer -->
-    <footer>
-      <iframe
-        src="footer.html"
-        frameborder="0"
-        scrolling="no"
-        id="iframe_footer"
-      ></iframe>
+
+    <!-- Site footer -->
+    <footer class="footer">
+      <p>
+        © 2023 Coffee Beans. All Rights Reserved.
+        <a href="#">Privacy Policy</a>
+      </p>
     </footer>
   </body>
 </html>
