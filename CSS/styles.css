@@ -399,3 +399,94 @@ footer {
   text-align: justify;
 }
 /* End Privacy Policy Page */
+
+/* Start Out Story*/
+h1 {
+  text-align: center;
+  color: #643215;
+}
+.div {
+  position: relative;
+  display: flex;
+  justify-items: center;
+  margin: 0 10% 0 10%;
+}
+.vl {
+  border: 6px solid #643215;
+  height: 900px;
+  justify-items: center;
+  align-items: center;
+  margin: 0 45% 0 45%;
+  border-radius: 20px;
+  color: #643215;
+  width: 5px;
+}
+.columnStory {
+  float: left;
+  width: 33.3333333%;
+  justify-items: center;
+  text-align: center;
+  height: auto;
+}
+.rightStory {
+  position: absolute;
+  left: 48.5%;
+}
+.rightStory > p {
+  width: 300px;
+  padding: 25px;
+  margin-left: 3%;
+  text-align: justify;
+}
+.rightStory2 {
+  position: absolute;
+  left: 48.5%;
+  top: 45%;
+}
+.rightStory2 > p {
+  width: 300px;
+  padding: 25px;
+  margin-left: 3%;
+  text-align: justify;
+}
+
+.leftStory {
+  position: absolute;
+  right: 51%;
+  top: 150px;
+}
+
+.leftStory > p {
+  width: 300px;
+  padding: 25px;
+  margin-left: 3%;
+  text-align: justify;
+}
+
+.leftStory2 {
+  position: absolute;
+  right: 51%;
+  top: 60%;
+}
+
+.leftStory2 > p {
+  width: 300px;
+  padding: 25px;
+  margin-left: 3%;
+  text-align: justify;
+}
+.column:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.gole {
+  text-align: center;
+  justify-items: center;
+}
+.gole > p {
+  width: 700px;
+  text-align: justify;
+  margin-left: 25%;
+}
+/* End Our Story */
