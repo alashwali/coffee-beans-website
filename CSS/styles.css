@@ -16,6 +16,9 @@
 section > p {
   margin-left: 5%;
 }
+a {
+  text-decoration: none;
+}
 /* Start navbar */
 
 #logo {
@@ -147,7 +150,9 @@ footer {
 }
 .footer > p > a {
   color: #e1834b;
+  text-decoration: underline;
 }
+
 /* End footer */
 
 /* Start shop page */
@@ -223,3 +228,118 @@ footer {
   opacity: 1;
 }
 /* End Shop Page */
+
+/* Start Single Product Page */
+
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  justify-items: center;
+  text-align: center;
+  height: auto;
+}
+.column-2 {
+  float: left;
+  width: 50%;
+  padding: 20px;
+  justify-items: center;
+  text-align: center;
+  height: auto; /* Should be removed. Only for demonstration */
+  background-color: #f5f5f5;
+  border: #f5f5f5 solid 1px;
+  border-radius: 20px;
+  margin-top: 30px;
+}
+.row {
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 5%;
+}
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.moreProductImg > img {
+  width: 50px;
+  height: 50px;
+  border: #aaa solid 1px;
+  object-fit: contain;
+}
+.column-2 > h2 {
+  margin-top: 30px;
+}
+.column-2 > p {
+  margin: 30px;
+  text-align: justify;
+}
+/* button start*/
+.CartBtn {
+  width: 140px;
+  height: 40px;
+  border-radius: 12px;
+  border: none;
+  background-color: #e1834b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition-duration: 0.5s;
+  overflow: hidden;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.103);
+  position: relative;
+  margin: 30px;
+}
+
+.IconContainer {
+  position: absolute;
+  left: -50px;
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 2;
+  transition-duration: 0.5s;
+}
+
+.icon {
+  border-radius: 1px;
+}
+
+.text {
+  height: 100%;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(17, 17, 17);
+  z-index: 1;
+  transition-duration: 0.5s;
+  font-size: 1.04em;
+  font-weight: 600;
+}
+
+.CartBtn:hover .IconContainer {
+  transform: translateX(58px);
+  border-radius: 40px;
+  transition-duration: 0.5s;
+}
+
+.CartBtn:hover .text {
+  transform: translate(10px, 0px);
+  transition-duration: 0.5s;
+}
+
+.CartBtn:active {
+  transform: scale(0.95);
+  transition-duration: 0.5s;
+}
+/* button ends*/
+/* End Single Product Page */
