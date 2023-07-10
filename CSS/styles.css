@@ -287,6 +287,17 @@ footer {
   grid-row-gap: 2%;
   overflow: hidden;
 }
+.relatedProducts{
+display: flex;
+align-items: center;
+column-gap: 20px;
+overflow-x: scroll;
+scroll-snap-type: x mandatory;
+}
+.gallery-item{
+  scroll-snap-align: center;
+  min-width: 20%;
+}
 .column {
   padding: 10px;
   justify-items: center;

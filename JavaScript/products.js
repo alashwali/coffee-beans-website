@@ -25,20 +25,22 @@ const products = [
     price: 21,
   },
 ];
-products.forEach((element) => {
-  product = document.getElementById("container").insertAdjacentHTML(
-    "afterend",
-    `<div class="card">
-        <a href="single product.html">
-          <div class="imgBox">
-            <img src="${element.img}" />
-          </div>
-          <div class="contentBox">
-            <h3>${element.name}</h3>
-            <h2 class="price">${element.price}</h2>
-            <a href="#" class="buy">Buy Now</a>
-          </div>
-        </a>
-      </div>`
-  );
-});
+for (let index = 0; index < 4; index++) {
+  products.forEach((element) => {
+    product = document.getElementById("container").insertAdjacentHTML(
+      "afterend",
+      `<div id="container" class="card">
+          <a href="single product.html">
+            <div class="imgBox">
+              <img src="${element.img}" />
+            </div>
+            <div class="contentBox">
+              <h3>${element.name}</h3>
+              <h2 class="price">${element.price}</h2>
+              <a href="#" class="buy">Buy Now</a>
+            </div>
+          </a>
+        </div>`
+    );
+  });
+}

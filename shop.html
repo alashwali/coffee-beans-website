@@ -15,18 +15,20 @@
   <body>
     <!-- start navbar -->
     <header id="header"></header>
-    <script type="module" src="JavaScript/navbar.js">
-      import {navbar} from 'JavaScript/navbar.js'
-    </script>
+    
     <!-- end navbar -->
     <br /><br /><br /><br /><br /><br /><br /><br /><br />
     <section>
       <!--  Start row -->
-      <div class="product-row" id="container"></div>
-      <script type="module" src="JavaScript/products.js">
-        import {product} from 'JavaScript/products.js'
-      </script>
-      <!-- <div class="card">
+      <!-- <div class="product-row ">
+        <div id="container"   >
+          <script type="module" src="JavaScript/products.js">
+            import {product} from 'JavaScript/products.js'
+          </script>
+        </div>
+      </div> -->
+      <div class="product-row">
+        <div class="card">
           <a href="single product.html">
             <div class="imgBox">
               <img src="Images//product1.png" alt="productN3232" />
@@ -66,7 +68,7 @@
         <div class="card">
           <a href="single product.html">
             <div class="imgBox">
-              <img src="Images/product4png" alt="productN3232" />
+              <img src="Images/product4.png" alt="productN3232" />
             </div>
             <div class="contentBox">
               <h3>Dunkin' Espresso-Style Extra Dark Roast Coffee</h3>
@@ -126,7 +128,7 @@
         <div class="card">
           <a href="single product.html">
             <div class="imgBox">
-              <img src="Images/product4png" alt="productN3232" />
+              <img src="Images/product4.png" alt="productN3232" />
             </div>
             <div class="contentBox">
               <h3>Dunkin' Espresso-Style Extra Dark Roast Coffee</h3>
@@ -146,14 +148,15 @@
               <a href="#" class="buy">Buy Now</a>
             </div></a
           >
-        </div> -->
-
+        </div>
+      </div>
       <div class="clearfix"></div>
     </section>
     <!-- Site footer -->
     <footer class="footer" id="footer"></footer>
-    <script type="module" src="JavaScript/footer.js">
-      import {footer} from 'JavaScript/footer.js'
+    <script type="module" src="JavaScript/index.js">
+      import {navbar} from 'JavaScript/index.js'
+      import {footer} from 'JavaScript/index.js'
     </script>
   </body>
 </html>
