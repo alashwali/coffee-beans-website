@@ -1,5 +1,5 @@
 * {
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
   box-sizing: border-box;
 }
@@ -287,14 +287,14 @@ footer {
   grid-row-gap: 2%;
   overflow: hidden;
 }
-.relatedProducts{
-display: flex;
-align-items: center;
-column-gap: 20px;
-overflow-x: scroll;
-scroll-snap-type: x mandatory;
+.relatedProducts {
+  display: flex;
+  align-items: center;
+  column-gap: 20px;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
 }
-.gallery-item{
+.gallery-item {
   scroll-snap-align: center;
   min-width: 20%;
 }
@@ -507,3 +507,106 @@ h1 {
   margin-left: 25%;
 }
 /* End Our Story */
+
+/* Start Wholesale page */
+.wholesale > div > p {
+  text-align: justify;
+  justify-content: center;
+}
+
+.gallery {
+  display: flex;
+  align-items: left;
+  column-gap: 2%;
+  padding: 10px;
+  justify-items: center;
+  height: auto;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  box-sizing: border-box;
+
+
+}
+::-webkit-scrollbar {
+  display: none;
+  width: 100%;
+  height: 100%;
+
+}
+.gallery_item {
+  padding: 5%;
+  flex: 0 0 40%;
+  justify-items: center;
+  text-align: center;
+  display: flex;
+  scroll-snap-align: start;
+  height: auto;
+  background-color: #f5f5f5;
+  border: #f5f5f5 solid 1px;
+  border-radius: 20px;
+  margin-top: 30px;
+  height: 100%;
+width: 40%;
+}
+
+
+.note {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.title {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 24px;
+  color: #2b2b2f;
+  margin-top: 6%;
+}
+
+.subtitle {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 18px;
+  color: #040405af;
+  text-align: justify;
+  text-align: left;
+}
+
+.input_field {
+  width: 100%;
+  height: 42px;
+  padding: 0 0 0 12px;
+  border-radius: 5px;
+  outline: none;
+  margin:  2%;
+  border: 1px solid #e5e5e5;
+  filter: drop-shadow(0px 1px 0px #efefef)
+    drop-shadow(0px 1px 0.5px rgba(239, 239, 239, 0.5));
+  transition: all 0.3s cubic-bezier(0.15, 0.83, 0.66, 1);
+}
+
+.input_field:focus {
+  border: 1px solid transparent;
+  box-shadow: 0px 0px 0px 1px #2b2b2f;
+  background-color: transparent;
+}
+
+.form button.submit {
+  justify-content: center;
+  align-items: center;
+  padding: 10px 18px;
+  width: 100%;
+  background-color: #271308;
+  border-radius: 5px;
+  border: 0;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 15px;
+  color: #ffffff;
+  margin:  2%;
+
+}
+/* End Wholesale page */

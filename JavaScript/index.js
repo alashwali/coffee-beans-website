@@ -3,7 +3,7 @@ export const navbar = `
     <a href="index.html"> <img id="logo" src="./Images/logo.png" /></a>
     <a href="index.html" class="navItem">Home</a>
     <a href="shop.html" class="navItem">Shop</a>
-    <a href="#" class="navItem">Wholesale</a>
+    <a href="wholesale.html" class="navItem">Wholesale</a>
     <a href="ourStory.html" class="navItem">Our Story</a>
     <a href="contactUs.html" class="navItem">Contact Us</a>
     <a href="#" class="navItem">Account</a>
