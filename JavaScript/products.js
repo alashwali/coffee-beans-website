@@ -1,4 +1,4 @@
-export let product;
+
 const products = [
   {
     id: 1,
@@ -25,11 +25,12 @@ const products = [
     price: 21,
   },
 ];
+let container = document.querySelector(".product-row");
 for (let index = 0; index < 4; index++) {
   products.forEach((element) => {
-    product = document.getElementById("container").insertAdjacentHTML(
-      "afterend",
-      `<div id="container" class="card">
+    product = document.createElement("div");
+    product.classList.add("item");
+    product.innerHTML = `<div class="card">
           <a href="single product.html">
             <div class="imgBox">
               <img src="${element.img}" />
@@ -40,7 +41,28 @@ for (let index = 0; index < 4; index++) {
               <a href="#" class="buy">Buy Now</a>
             </div>
           </a>
-        </div>`
-    );
+        </div>`;
+    container.appendChild(product);
   });
 }
+
+// function init2() {
+//   products.forEach((value) => {
+//     let newDiv = document.createElement("div");
+//     newDiv.classList.add("item");
+//     newDiv.innerHTML = `<div class="card">
+//                     <a href="single product.html">
+//                       <div class="imgBox">
+//                         <img src="${value.img}" />
+//                       </div>
+//                       <div class="contentBox">
+//                         <h3>${value.name}</h3>
+//                         <h2 class="price">${value.price}</h2>
+//                         <a href="#" class="buy">Buy Now</a>
+//                       </div>
+//                     </a>
+//                   </div>`;
+//     product.appendChild(newDiv);
+//   });
+// }
+// init2();

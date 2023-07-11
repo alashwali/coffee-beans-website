@@ -292,7 +292,10 @@ footer {
   align-items: center;
   column-gap: 20px;
   overflow-x: scroll;
-  scroll-snap-type: x mandatory;
+  /* scroll-snap-type: x mandatory; */
+  scroll-snap-stop:always ;
+  scroll-margin :20px;
+  scroll-padding:20px;
 }
 .gallery-item {
   scroll-snap-align: center;
@@ -514,21 +517,20 @@ h1 {
   justify-content: center;
 }
 
-.gallery {
-   display: grid;
+.gallery2 {
+  display: grid;
   grid-auto-columns: 100%;
   grid-column-gap: 10px;
   grid-auto-flow: column;
   padding: 25px 0px;
-  list-style: none;
   overflow-x: scroll;
   scroll-snap-type: x mandatory;
-
+  justify-content: start;
 }
 
 .gallery_item {
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   padding: 20px;
   background: var(--white);
   border-radius: 12px;
@@ -536,52 +538,58 @@ h1 {
   scroll-snap-align: start;
   transition: all 0.2s;
 }
-.gallery .gallery-title {
+.gallery-img {
+ width: 30%;
+  height: auto;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.gallery2 .gallery-title {
   font-size: 20px;
 }
-.gallery .gallery-content {
+.gallery2 .gallery-content {
   margin: 20px 0;
   max-width: 85%;
 }
 
-.gallery::-webkit-scrollbar {
+.gallery2::-webkit-scrollbar {
   height: 12px;
 }
 
-.gallery::-webkit-scrollbar-thumb,
-.gallery::-webkit-scrollbar-track {
+.gallery2::-webkit-scrollbar-thumb,
+.gallery2::-webkit-scrollbar-track {
   border-radius: 92px;
 }
 
-.gallery::-webkit-scrollbar-thumb {
+.gallery2::-webkit-scrollbar-thumb {
   background: var(--darkorange);
 }
 
-.gallery::-webkit-scrollbar-track {
+.gallery2::-webkit-scrollbar-track {
   background: var(--thumb);
 }
 
 @media (min-width: 500px) {
-  .gallery {
+  .gallery2 {
     grid-auto-columns: calc(50% - 10px);
     grid-column-gap: 20px;
   }
 }
 
 @media (min-width: 700px) {
-  .gallery {
+  .gallery2 {
     grid-auto-columns: calc(calc(100% / 3) - 20px);
     grid-column-gap: 30px;
   }
 }
 
 @media (min-width: 1100px) {
-  .gallery {
+  .gallery2 {
     grid-auto-columns: calc(25% - 30px);
     grid-column-gap: 40px;
   }
 }
-
 
 .note {
   display: flex;
