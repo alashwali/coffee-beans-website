@@ -515,38 +515,71 @@ h1 {
 }
 
 .gallery {
-  display: flex;
-  align-items: left;
-  column-gap: 2%;
-  padding: 10px;
-  justify-items: center;
-  height: auto;
+   display: grid;
+  grid-auto-columns: 100%;
+  grid-column-gap: 10px;
+  grid-auto-flow: column;
+  padding: 25px 0px;
+  list-style: none;
   overflow-x: scroll;
   scroll-snap-type: x mandatory;
-  box-sizing: border-box;
-
 
 }
-::-webkit-scrollbar {
-  display: none;
-  width: 100%;
-  height: 100%;
 
-}
 .gallery_item {
-  padding: 5%;
-  flex: 0 0 40%;
-  justify-items: center;
-  text-align: center;
   display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background: var(--white);
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 15%);
   scroll-snap-align: start;
-  height: auto;
-  background-color: #f5f5f5;
-  border: #f5f5f5 solid 1px;
-  border-radius: 20px;
-  margin-top: 30px;
-  height: 100%;
-width: 40%;
+  transition: all 0.2s;
+}
+.gallery .gallery-title {
+  font-size: 20px;
+}
+.gallery .gallery-content {
+  margin: 20px 0;
+  max-width: 85%;
+}
+
+.gallery::-webkit-scrollbar {
+  height: 12px;
+}
+
+.gallery::-webkit-scrollbar-thumb,
+.gallery::-webkit-scrollbar-track {
+  border-radius: 92px;
+}
+
+.gallery::-webkit-scrollbar-thumb {
+  background: var(--darkorange);
+}
+
+.gallery::-webkit-scrollbar-track {
+  background: var(--thumb);
+}
+
+@media (min-width: 500px) {
+  .gallery {
+    grid-auto-columns: calc(50% - 10px);
+    grid-column-gap: 20px;
+  }
+}
+
+@media (min-width: 700px) {
+  .gallery {
+    grid-auto-columns: calc(calc(100% / 3) - 20px);
+    grid-column-gap: 30px;
+  }
+}
+
+@media (min-width: 1100px) {
+  .gallery {
+    grid-auto-columns: calc(25% - 30px);
+    grid-column-gap: 40px;
+  }
 }
 
 
@@ -581,7 +614,7 @@ width: 40%;
   padding: 0 0 0 12px;
   border-radius: 5px;
   outline: none;
-  margin:  2%;
+  margin: 2%;
   border: 1px solid #e5e5e5;
   filter: drop-shadow(0px 1px 0px #efefef)
     drop-shadow(0px 1px 0.5px rgba(239, 239, 239, 0.5));
@@ -606,7 +639,6 @@ width: 40%;
   font-size: 12px;
   line-height: 15px;
   color: #ffffff;
-  margin:  2%;
-
+  margin: 2%;
 }
 /* End Wholesale page */
