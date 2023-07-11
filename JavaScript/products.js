@@ -1,4 +1,3 @@
-
 const products = [
   {
     id: 1,
@@ -26,43 +25,42 @@ const products = [
   },
 ];
 let container = document.querySelector(".product-row");
-for (let index = 0; index < 4; index++) {
-  products.forEach((element) => {
-    product = document.createElement("div");
-    product.classList.add("item");
-    product.innerHTML = `<div class="card">
-          <a href="single product.html">
-            <div class="imgBox">
-              <img src="${element.img}" />
-            </div>
-            <div class="contentBox">
-              <h3>${element.name}</h3>
-              <h2 class="price">${element.price}</h2>
-              <a href="#" class="buy">Buy Now</a>
-            </div>
-          </a>
-        </div>`;
-    container.appendChild(product);
-  });
-}
 
-// function init2() {
-//   products.forEach((value) => {
-//     let newDiv = document.createElement("div");
-//     newDiv.classList.add("item");
-//     newDiv.innerHTML = `<div class="card">
-//                     <a href="single product.html">
-//                       <div class="imgBox">
-//                         <img src="${value.img}" />
-//                       </div>
-//                       <div class="contentBox">
-//                         <h3>${value.name}</h3>
-//                         <h2 class="price">${value.price}</h2>
-//                         <a href="#" class="buy">Buy Now</a>
-//                       </div>
-//                     </a>
-//                   </div>`;
-//     product.appendChild(newDiv);
-//   });
-// }
-// init2();
+// loop for  displaying all the products in html page
+function init2() {
+  for (let index = 0; index < 4; index++) {
+    products.forEach((element) => {
+      let newDiv = document.createElement("div");
+      newDiv.classList.add("item");
+      newDiv.innerHTML = `<div class="card">
+              <a href="single product.html">
+                <div class="imgBox">
+                  <img src="${element.img}" />
+                </div>
+                <div class="contentBox">
+                  <h3>${element.name}</h3>
+                  <h2 class="price">${element.price}</h2>
+                  <a href="#" class="buy">Buy Now</a>
+                </div>
+              </a>
+            </div>`;
+      container.appendChild(newDiv);
+    });
+  }
+}
+let loader = document.getElementById("loader");
+function doSomething(callback) {
+  loader.innerHTML = `
+  <div class="loader-text">Loading...</div>
+  <div class="loader-bar"></div>
+ `;
+  setTimeout(function () {
+    loader.style.visibility = "hidden"; // to hidden loader svg
+    loader.style.margin = 0;
+    callback();
+  }, 3000);
+}
+function doSomethingElse() {
+  init2(); //call
+}
+doSomething(doSomethingElse);

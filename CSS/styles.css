@@ -293,9 +293,9 @@ footer {
   column-gap: 20px;
   overflow-x: scroll;
   /* scroll-snap-type: x mandatory; */
-  scroll-snap-stop:always ;
-  scroll-margin :20px;
-  scroll-padding:20px;
+  scroll-snap-stop: always;
+  scroll-margin: 20px;
+  scroll-padding: 20px;
 }
 .gallery-item {
   scroll-snap-align: center;
@@ -539,7 +539,7 @@ h1 {
   transition: all 0.2s;
 }
 .gallery-img {
- width: 30%;
+  width: 30%;
   height: auto;
   border-radius: 20px;
   text-align: center;
@@ -650,3 +650,82 @@ h1 {
   margin: 2%;
 }
 /* End Wholesale page */
+
+/* Start Loader */
+.loader {
+  /* background-color: blue; */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+          margin-top: 40%;
+}
+
+.loader-text {
+  font-size: 24px;
+  color: #271308;
+  margin-bottom: 20px;
+  -ms-flex-item-align: center;
+      align-self: center;
+}
+
+.loader-bar {
+  width: 30%;
+  height: 10px;
+  border-radius: 5px;
+  background-color: #271308;
+  -webkit-animation: loader-bar-animation 2s ease-in-out infinite;
+          animation: loader-bar-animation 2s ease-in-out infinite;
+}
+
+@-webkit-keyframes loader-bar-animation {
+  0% {
+    /* transform: translateX(-100%) rotate(270deg); */
+    -webkit-transform: translateX(-100%) ;
+            transform: translateX(-100%) ;
+
+  }
+
+  50% {
+    /* transform: translateX(100%) rotate(-90deg); */
+    -webkit-transform: translateX(100%) ;
+            transform: translateX(100%) ;
+  }
+
+  100% {
+    /* transform: translateX(-100%) rotate(270deg); */
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+}
+
+@keyframes loader-bar-animation {
+  0% {
+    /* transform: translateX(-100%) rotate(270deg); */
+    -webkit-transform: translateX(-100%) ;
+            transform: translateX(-100%) ;
+
+  }
+
+  50% {
+    /* transform: translateX(100%) rotate(-90deg); */
+    -webkit-transform: translateX(100%) ;
+            transform: translateX(100%) ;
+  }
+
+  100% {
+    /* transform: translateX(-100%) rotate(270deg); */
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+}
+/* End Loader */
