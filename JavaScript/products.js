@@ -51,8 +51,11 @@ function init2() {
 let loader = document.getElementById("loader");
 function doSomething(callback) {
   loader.innerHTML = `
-  <div class="loader-text">Loading...</div>
-  <div class="loader-bar"></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
  `;
   setTimeout(function () {
     loader.style.visibility = "hidden"; // to hidden loader svg
