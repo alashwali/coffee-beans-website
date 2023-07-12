@@ -39,7 +39,7 @@ function init2() {
                 </div>
                 <div class="contentBox">
                   <h3>${element.name}</h3>
-                  <h2 class="price">${element.price}</h2>
+                  <h2 class="price">${element.price}$</h2>
                   <a href="#" class="buy">Buy Now</a>
                 </div>
               </a>
