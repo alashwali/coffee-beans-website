@@ -6,13 +6,13 @@ export const navbar = `
     <a href="wholesale.html" class="navItem">Wholesale</a>
     <a href="ourStory.html" class="navItem">Our Story</a>
     <a href="contactUs.html" class="navItem">Contact Us</a>
-    <a href="#" class="navItem">Account</a>
+    <a href="account.html" class="navItem">Account</a>
     <!-- search icon -->
     <div class="container">
       <input
         placeholder="Type to search..."
         required=""
-        class="input"
+        class="input-search"
         name="text"
         type="text"
       />
