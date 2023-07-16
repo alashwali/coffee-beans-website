@@ -124,6 +124,9 @@ nav > a:hover::before {
   .home-page {
     background-image: none;
   }
+  .section {
+    margin-top: 50%;
+  }
 }
 
 /* Start roasts gallery*/
@@ -279,64 +282,70 @@ footer {
 @-webkit-keyframes follow-the-leader {
   0% {
     -webkit-transform: rotate(0deg) translateY(-200%);
-    transform: rotate(0deg) translateY(-200%); }
+    transform: rotate(0deg) translateY(-200%);
+  }
   60%,
   100% {
     -webkit-transform: rotate(360deg) translateY(-200%);
-    transform: rotate(360deg) translateY(-200%); } }
+    transform: rotate(360deg) translateY(-200%);
+  }
+}
 @keyframes follow-the-leader {
   0% {
     -webkit-transform: rotate(0deg) translateY(-200%);
-    transform: rotate(0deg) translateY(-200%); }
+    transform: rotate(0deg) translateY(-200%);
+  }
   60%,
   100% {
     -webkit-transform: rotate(360deg) translateY(-200%);
-    transform: rotate(360deg) translateY(-200%); } }
+    transform: rotate(360deg) translateY(-200%);
+  }
+}
 
 .follow-the-leader-line {
   height: 14px;
   position: relative;
-  width: 14px; 
-  margin: 30% 0 0 50%;
+  width: 14px;
+  margin: 15% 0 0 50%;
 }
-  
+
 .follow-the-leader-line div {
   -webkit-animation: follow-the-leader 1.25s infinite backwards;
   animation: follow-the-leader 1.25s infinite backwards;
   background-color: #271308;
   border-radius: 100%;
   height: 100%;
-  width: 100%; 
+  width: 100%;
 }
 
 .follow-the-leader-line div:nth-child(1) {
   -webkit-animation-delay: 0.15s;
   animation-delay: 0.15s;
-  background-color: rgb(39, 19, 8, 0.9); 
+  background-color: rgb(39, 19, 8, 0.9);
 }
 
 .follow-the-leader-line div:nth-child(2) {
   -webkit-animation-delay: 0.3s;
   animation-delay: 0.3s;
-  background-color: rgb(39, 19, 8, 0.8); 
+  background-color: rgb(39, 19, 8, 0.8);
 }
 
 .follow-the-leader-line div:nth-child(3) {
   -webkit-animation-delay: 0.45s;
   animation-delay: 0.45s;
-  background-color: rgb(39, 19, 8, 0.7); 
+  background-color: rgb(39, 19, 8, 0.7);
 }
 
 .follow-the-leader-line div:nth-child(4) {
   -webkit-animation-delay: 0.6s;
   animation-delay: 0.6s;
-  background-color: rgb(39, 19, 8, 0.6); 
+  background-color: rgb(39, 19, 8, 0.6);
 }
 
 .follow-the-leader-line div:nth-child(5) {
   -webkit-animation-delay: 0.75s;
   animation-delay: 0.75s;
-  background-color: rgb(39, 19, 8, 0.5); 
+  background-color: rgb(39, 19, 8, 0.5);
 }
 /* End Loader */
 /* End Shop Page */
@@ -716,4 +725,102 @@ h1 {
 }
 /* End Wholesale page */
 
-/*  */
+/* Start Contact us */
+.section-contact {
+  background-color: #f5f5f5;
+  margin: 15%;
+  height: 572px;
+  width: 70%;
+  display: flex;
+  flex-direction: row;
+  float: left;
+
+}
+.column-contact {
+  padding: 10px;
+
+}
+
+
+.contact-info {
+  background-color: #766549;
+  padding: 10px;
+}
+.card-contact {
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 25px 25px;
+  margin-top: 100%;
+  gap: 20px;
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* for all social containers*/
+.socialContainer {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background-color: rgb(44, 44, 44);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition-duration: 0.3s;
+}
+/* instagram*/
+.containerOne:hover {
+  background-color: #d62976;
+  transition-duration: 0.3s;
+}
+/* twitter*/
+.containerTwo:hover {
+  background-color: #00acee;
+  transition-duration: 0.3s;
+}
+/* linkdin*/
+.containerThree:hover {
+  background-color: #0072b1;
+  transition-duration: 0.3s;
+}
+/* Whatsapp*/
+.containerFour:hover {
+  background-color: #128c7e;
+  transition-duration: 0.3s;
+}
+
+.socialContainer:active {
+  transform: scale(0.9);
+  transition-duration: 0.3s;
+}
+
+.socialSvg {
+  width: 17px;
+}
+
+.socialSvg path {
+  fill: rgb(255, 255, 255);
+}
+
+.socialContainer:hover .socialSvg {
+  animation: slide-in-top 0.3s both;
+}
+
+@keyframes slide-in-top {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* End Contact us */
