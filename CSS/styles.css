@@ -1,5 +1,5 @@
 * {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Poppins, Geneva, Verdana, sans-serif;
   margin: 0;
   box-sizing: border-box;
 }
@@ -735,6 +735,8 @@ h1 {
   flex-direction: row;
   float: left;
 }
+
+
 .column-contact {
   padding: 10px;
 }
@@ -822,15 +824,47 @@ h1 {
 /* End Contact us */
 
 /* Start Account Page */
+@media only screen and (max-width: 800px) {
+  .section-acc {
+    margin: auto;
+    width: 50%;
+    background-color: #f5f5f5;
+  }
+}
 .section-acc {
   margin: auto;
   width: 50%;
   background-color: #f5f5f5;
+  column-count: 2;
+}
+.layout {
+  height: 600px;
+  background-color: #4c2510;
+  width: 50%;
+  float: right;
+}
+.login-radio:hover,
+.register-radio:hover {
+  padding: 5px;
+  border-radius: 15px;
+  background-color: #4c2510;
+}
+.login-radio,
+.register-radio {
+  padding: 5px;
+  border-radius: 15px;
+  padding-top: 6%;
+}
+.form-acc {
+  height: 550px;
+  width: 50vw;
+  padding: 2%;
+  margin: 9%;
 }
 .login {
   display: inline-block;
   width: 100%;
-  margin-left: 20%;
+  margin-left: 10%;
 }
 .input-group {
   position: relative;
@@ -900,19 +934,26 @@ form a {
 
 .switch-user {
   background-color: #766549;
-  height: 20%;
+  height: 10%;
   padding: 2%;
-  margin-top: 4%;
+  margin: 9%;
+  margin-right: 15%;
   float: right;
   font-size: x-large;
+  color: white;
+  border-radius: 15px;
+  width: 130%;
+  justify-content: space-between;
 }
+
 .switch-user label input {
   opacity: 0;
-  justify-content: space-between;
-  color: white;
+  padding: 5px;
+  margin: 0 10px 0 10px;
 }
 
 #example2 {
   margin-left: 20%;
 }
+
 /* End Account Page */

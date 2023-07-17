@@ -25,29 +25,33 @@
     </script>
     <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
     <section class="section-acc">
-      <div class="switch-user">
-        <label class="label-for-radio">
-          <input
-            type="radio"
-            value="Login"
-            onclick="switchPage(this.value); "
-            checked
-          />
-          <span>Login</span>
-        </label>
-        <label class="label-for-radio">
-          <input
-            type="radio"
-            value="Register"
-            onclick="switchPage(this.value);"
-          />
-          Register
-        </label>
-      </div>
-      <div>
+      <div class="form-acc">
         <div class="form-inner"></div>
         <div id="example2"></div>
       </div>
+   
+      <div class="layout ">
+        <div class="switch-user">
+          <label class="login-radio">
+            <input
+              type="radio"
+              value="Login"
+              onclick="switchPage(this.value); "
+              checked
+            />
+            Login
+          </label>
+          <label class="register-radio">
+            <input
+              type="radio"
+              value="Register"
+              onclick="switchPage(this.value);"
+            />
+            Register
+          </label>
+        </div>
+      </div>
+   
     </section>
     <!-- Resets reCAPTCHA widgetId2 upon submit. -->
     <script
