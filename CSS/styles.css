@@ -842,10 +842,10 @@ h1 {
   background-color: #4c2510;
   width: 50%;
   float: right;
+  
 }
 .login-radio:hover,
 .register-radio:hover {
-  padding: 5px;
   border-radius: 15px;
   background-color: #4c2510;
 }
@@ -853,7 +853,7 @@ h1 {
 .register-radio {
   padding: 5px;
   border-radius: 15px;
-  padding-top: 6%;
+
 }
 .form-acc {
   height: 550px;
@@ -937,19 +937,20 @@ form a {
   height: 10%;
   padding: 2%;
   margin: 9%;
-  margin-right: 15%;
+  margin-right: 20%;
   float: right;
   font-size: x-large;
   color: white;
   border-radius: 15px;
   width: 130%;
-  justify-content: space-between;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .switch-user label input {
   opacity: 0;
   padding: 5px;
-  margin: 0 10px 0 10px;
+  margin-top: 7%;
 }
 
 #example2 {
