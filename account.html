@@ -8,78 +8,6 @@
     ></a>
     <link rel="icon" href="./Images/logo.png" />
     <link rel="stylesheet" href="CSS/styles.css" />
-    <style>
-      form {
-        display: inline-block;
-        width: 100%;
-        margin: 20% 20%;
-      }
-      .input-group {
-        position: relative;
-        margin-bottom: 2%;
-      }
-
-      .input {
-        border: solid 1.5px #d5cfc7;
-        border-radius: 1rem;
-        background: none;
-        padding: 1rem;
-        font-size: 1rem;
-        font-weight: 400;
-        color: #271308;
-        width: 50%;
-        transition: border 150ms cubic-bezier(0.4, 0, 0.2, 1);
-      }
-
-      .user-label {
-        position: absolute;
-        left: 15px;
-        color: #a09c9c;
-        pointer-events: none;
-        transform: translateY(1rem);
-        transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
-      }
-
-      .input:focus,
-      input:valid {
-        outline: none;
-        border: 1.5px solid #d5cfc7;
-      }
-
-      .input:focus ~ label,
-      input:valid ~ label {
-        transform: translateY(-50%) scale(0.8);
-        padding: 0 0.2em;
-        color: #271308;
-      }
-
-      /*Button*/
-      .button {
-        background-color: #766549;
-        color: #fff;
-        border: 0;
-        border-radius: 6px;
-        font-size: 1rem;
-        padding: 10px 16px;
-
-        font-size: 1rem;
-        width: 52%;
-        margin-bottom: 2%;
-        font-weight: 400;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-      }
-
-      .button:hover {
-        background-color: white;
-        border: #766549 solid 2px;
-        color: #766549;
-      }
-      form a {
-        text-decoration: none;
-        color: #271308;
-      }
-    </style>
   </head>
 
   <body>
@@ -96,30 +24,89 @@
       };
     </script>
     <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-    <label>
-      <input
-        type="radio"
-        name="fav_color"
-        value="Login"
-        onclick="analyzeColor(this.value);"
-        checked
-      />
-      Login
-    </label>
-    <label>
-      <input
-        type="radio"
-        name="fav_color"
-        value="Register"
-        onclick="analyzeColor(this.value);"
-      />
-      Register
-    </label>
-    <div class="form-inner"></div>
+    <section class="section-acc">
+      <div class="switch-user">
+        <label class="label-for-radio">
+          <input
+            type="radio"
+            value="Login"
+            onclick="switchPage(this.value); "
+            checked
+          />
+          <span>Login</span>
+        </label>
+        <label class="label-for-radio">
+          <input
+            type="radio"
+            value="Register"
+            onclick="switchPage(this.value);"
+          />
+          Register
+        </label>
+      </div>
+      <div>
+        <div class="form-inner"></div>
+        <div id="example2"></div>
+      </div>
+    </section>
+    <!-- Resets reCAPTCHA widgetId2 upon submit. -->
+    <script
+      src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+      async
+      defer
+    ></script>
 
-    <form action="#" class="Register" action="javascript:grecaptcha.reset(widgetId2);"> 
+    <script>
+      let container = document.querySelector(".form-inner");
+      let newDiv = document.createElement("div");
+      newDiv.classList.add("item");
+      let loginForm = ` <form action="#" class="login" >
+      <!-- user name -->
+      <h3>Welcome to Coffee Beans</h3>
+       <br>
+        <h5>Login</h5>
+        <br>
+      <div class="input-group">
+        <input
+          required=""
+          type="text"
+          name="text"
+          autocomplete="off"
+          class="input"
+        />
+        <label class="user-label">User Name</label>
+      </div>
+      <!-- password -->
+      <div class="input-group">
+        <input
+          required=""
+          type="password"
+          name="text"
+          autocomplete="off"
+          class="input"
+        />
+        <label class="user-label">Password</label>
+      </div>
+      <a href="#"><h5>Forget Password</h5></a>
+      
+<br>
+      <!-- button -->
+      <button class="button">Login</button>
+    </form>`;
+      newDiv.innerHTML = loginForm;
+      container.appendChild(newDiv);
+      function loginFormFun() {
+        newDiv.innerHTML = loginForm;
+        container.appendChild(newDiv);
+      }
+      function RegisterFormFun() {
+        newDiv.innerHTML = `<form action="#" class="login" action="javascript:grecaptcha.reset(widgetId2);"> 
       <!-- Email  -->
       <div class="input-group">
+       <h3> Welcome to Coffee Beans</h3>
+       <br>
+        <h5>Create Account</h5>
+      <br>
         <input
           required=""
           type="email"
@@ -151,66 +138,18 @@
         />
         <label class="user-label">Password</label>
       </div>
-      <div id="example2"></div>
-      <!-- button -->
+      <!-- button --><br>
+
       <button class="button">Register</button>
-    </form>
-    <!-- Resets reCAPTCHA widgetId2 upon submit. -->
-    <script
-      src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
-      async
-      defer
-    ></script>
-
-    <script>
-      let container = document.querySelector(".form-inner");
-      let newDiv = document.createElement("div");
-      newDiv.classList.add("item");
-      let loginForm = ` <form action="#" class="login" >
-      <!-- user name -->
-      <div class="input-group">
-        <input
-          required=""
-          type="text"
-          name="text"
-          autocomplete="off"
-          class="input"
-        />
-        <label class="user-label">User Name</label>
-      </div>
-      <!-- password -->
-      <div class="input-group">
-        <input
-          required=""
-          type="password"
-          name="text"
-          autocomplete="off"
-          class="input"
-        />
-        <label class="user-label">Password</label>
-      </div>
-      <a href="#"><h5>Forget Password</h5></a>
-      
-
-      <!-- button -->
-      <button class="button">Login</button>
     </form>`;
-      // newDiv.innerHTML = loginForm;
-      // container.appendChild(newDiv);
-
-      function loginFormFun() {
-        newDiv.innerHTML = loginForm;
-        container.appendChild(newDiv);
-      }
-      function RegisterFormFun() {
-        newDiv.innerHTML = ` <h1>test test</h1>`;
         container.appendChild(newDiv);
       }
 
-      function analyzeColor(myColor) {
-        switch (myColor) {
+      function switchPage(page) {
+        switch (page) {
           case "Login":
             loginFormFun();
+
             break;
           case "Register":
             RegisterFormFun();
