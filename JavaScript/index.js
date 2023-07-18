@@ -5,7 +5,7 @@ export const navbar = `
     <a href="shop.html" class="navItem">Shop</a>
     <a href="wholesale.html" class="navItem">Wholesale</a>
     <a href="ourStory.html" class="navItem">Our Story</a>
-    <a href="contactUs.html" class="navItem">Contact Us</a>
+    <a href="#" class="navItem">Contact Us</a>
     <a href="account.html" class="navItem">Account</a>
     <!-- search icon -->
     <div class="container">
