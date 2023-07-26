@@ -67,3 +67,4 @@ function doSomethingElse() {
   init2(); //call
 }
 doSomething(doSomethingElse);
+

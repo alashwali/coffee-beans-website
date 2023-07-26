@@ -29,8 +29,8 @@
         <div class="form-inner"></div>
         <div id="example2"></div>
       </div>
-   
-      <div class="layout ">
+
+      <div class="layout">
         <div class="switch-user">
           <label class="login-radio">
             <input
@@ -51,7 +51,6 @@
           </label>
         </div>
       </div>
-   
     </section>
     <!-- Resets reCAPTCHA widgetId2 upon submit. -->
     <script
@@ -64,7 +63,7 @@
       let container = document.querySelector(".form-inner");
       let newDiv = document.createElement("div");
       newDiv.classList.add("item");
-      let loginForm = ` <form action="#" class="login" >
+      let loginForm = ` <form  class="login" >
       <!-- user name -->
       <h3>Welcome to Coffee Beans</h3>
        <br>
@@ -77,6 +76,7 @@
           name="text"
           autocomplete="off"
           class="input"
+          id="LoginUserName"
         />
         <label class="user-label">User Name</label>
       </div>
@@ -88,6 +88,7 @@
           name="text"
           autocomplete="off"
           class="input"
+          id="LoginPassword"
         />
         <label class="user-label">Password</label>
       </div>
@@ -95,7 +96,7 @@
       
 <br>
       <!-- button -->
-      <button class="button">Login</button>
+      <button class="button" id="SignUpForm">Login</button>
     </form>`;
       newDiv.innerHTML = loginForm;
       container.appendChild(newDiv);
@@ -104,7 +105,7 @@
         container.appendChild(newDiv);
       }
       function RegisterFormFun() {
-        newDiv.innerHTML = `<form action="#" class="login" action="javascript:grecaptcha.reset(widgetId2);"> 
+        newDiv.innerHTML = `<form class="login""> 
       <!-- Email  -->
       <div class="input-group">
        <h3> Welcome to Coffee Beans</h3>
@@ -128,6 +129,7 @@
           name="text"
           autocomplete="off"
           class="input"
+          id="SignUpUserName"
         />
         <label class="user-label">User Name</label>
       </div>
@@ -139,14 +141,23 @@
           name="text"
           autocomplete="off"
           class="input"
+          id="SignUpPassword"
         />
         <label class="user-label">Password</label>
       </div>
       <!-- button --><br>
 
-      <button class="button">Register</button>
+      <button class="button" id="SignUpForm">Register</button>
     </form>`;
         container.appendChild(newDiv);
+        const SignUpForm = document.getElementById("SignUpForm");
+        SignUpForm.addEventListener("click", (e) => {
+        e.preventDefault();
+        const UserName1 = document.getElementById("SignUpUserName").value;
+        const Password1 = document.getElementById("SignUpPassword").value;
+        //Store the Information in IndexedDB
+        SaveDataToIndexedDB(UserName1, Password1);
+      });
       }
 
       function switchPage(page) {
@@ -159,6 +170,73 @@
             RegisterFormFun();
             break;
         }
+      }
+
+      const LoginForm = document.getElementById("LoginForm");
+           LoginForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const UserName2 = document.getElementById("LoginUserName").value;
+        const Password2 = document.getElementById("LoginPassword").value;
+        //Read the Information from IndexedDB
+        CheckDataInIndexedDB(UserName2, Password2);
+      });
+      //Function to Store Data in IndexedDB
+      function SaveDataToIndexedDB(UserName, Password) {
+        const User = { username: UserName, password: Password };
+        const request = window.indexedDB.open("UserDB", 1);
+        request.onerror = (event) => {
+          console.error("Sorry. Error Creating IndexedDB Database");
+        };
+        request.onsuccess = (event) => {
+          const db = event.target.result;
+          const transaction = db.transaction(["Users"], "readwrite");
+          const objectstore = transaction.objectStore("Users");
+          const addUserRequest = objectstore.add(User);
+          addUserRequest.onsuccess = () => {
+            console.log("User Data Saved Successfully!");
+            window.location.href="./index.html";
+          };
+          transaction.onsuccess = () => {
+            db.close();
+          };
+        };
+        request.onupgradeneeded = (event) => {
+          const db = event.target.result;
+          db.createObjectStore("Users", { keyPath: "username" });
+        };
+      }
+      //Function to Checking User Data in the IndexedDB
+      function CheckDataInIndexedDB(UserName, Password) {
+        const request = window.indexedDB.open("UserDB", 1);
+        request.onerror = (event) => {
+          console.error("Error while Reading!");
+        };
+        request.onsuccess = (event) => {
+          const db = event.target.result;
+          const transaction = db.transaction(["Users"], "readonly");
+          const objectstore = transaction.objectStore("Users"); //all username
+          const getUserRequest = objectstore.get(UserName);
+          getUserRequest.onsuccess = () => {
+            const User = getUserRequest.result;
+            if (User && User.password === Password) {
+              console.log("Login Successful!");
+              window.location.href = "./index.html";
+            } else {
+              console.log("UserName or Password Incorrect");
+              document.getElementById(
+                "result"
+              ).innerHTML = `UserName or Password Incorrect`;
+              console.log("UserName or Password Incorrect");
+            }
+          };
+          transaction.oncomplete = () => {
+            db.close();
+          };
+        };
+        request.onupgradeneeded = (event) => {
+          const db = event.target.result;
+          db.createObjectStore("Users", { keyPath: "UserName" });
+        };
       }
     </script>
 
