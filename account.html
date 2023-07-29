@@ -91,9 +91,10 @@
           id="LoginPassword"
         />
         <label class="user-label">Password</label>
+              <p id="result" style=" color: #cc0033;"><p/>
+
       </div>
       <a href="#"><h5>Forget Password</h5></a>
-      
 <br>
       <!-- button -->
       <button class="button" id="LoginForm">Login</button>
@@ -133,6 +134,7 @@
           name="text"
           autocomplete="off"
           class="input"
+                    id="SignUpEmail"
         />
         <label class="user-label"> Email Address</label>
       </div>
@@ -159,6 +161,7 @@
           id="SignUpPassword"
         />
         <label class="user-label">Password</label>
+                      <p id="result" style=" color: #cc0033;"><p/>
       </div>
       <!-- button --><br>
 
@@ -170,8 +173,8 @@
           e.preventDefault();
           const UserName1 = document.getElementById("SignUpUserName").value;
           const Password1 = document.getElementById("SignUpPassword").value;
-          //Store the Information in IndexedDB
-          SaveDataToIndexedDB(UserName1, Password1);
+          const Email1 = document.getElementById("SignUpEmail").value;
+          SaveDataToIndexedDB(UserName1, Password1,Email1);
         });
       }
 
@@ -187,9 +190,8 @@
         }
       }
 
-      //Function to Store Data in IndexedDB
-      function SaveDataToIndexedDB(UserName, Password) {
-        const User = { username: UserName, password: Password };
+      function SaveDataToIndexedDB(UserName, Password,Email) {
+        const User = { username: UserName, password: Password ,emil: Email };
         const request = window.indexedDB.open("UserDB", 1);
         request.onerror = (event) => {
           console.error("Sorry. Error Creating IndexedDB Database");
@@ -201,7 +203,10 @@
           const addUserRequest = objectstore.add(User);
           addUserRequest.onsuccess = () => {
             console.log("User Data Saved Successfully!");
-            window.location.href = "./index.html";
+                        window.location.href = "./account.html";
+          };
+           addUserRequest.onerror = () => {
+            console.log("An account with email address already exists, Please login using this email address or reset the password.");
           };
           transaction.onsuccess = () => {
             db.close();
